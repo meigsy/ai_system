@@ -9,7 +9,7 @@ def table_snapshot(project_id, expiration_days):
     # There are sdk/client options for doing this stuff, but it's more convenient in pure bigquery SQL.
     # When things go wrong I can grab the verbatim query and drop it into the bigquery console to start debugging.
     query = f"""
-    CREATE SNAPSHOT TABLE predictor_v1_jobs_backup.output_v1_{today}
+    CREATE SNAPSHOT TABLE predictor_v1_backup.output_v1_{today}
     CLONE predictor_v1_curated.output_v1
     """
 
@@ -20,7 +20,7 @@ def table_snapshot(project_id, expiration_days):
 
 
 if __name__ == "__main__":
-    # executing from here is just for local testing. So if I set the expiration to 1 day
+    # Executing from here is just for local testing. So if I set the expiration to one day
     # I can debug as much as I want without needing to worry about cleaning up. It'll all disappear in a day.
 
     _project_id = "ai-system-meigsy-gcp"
