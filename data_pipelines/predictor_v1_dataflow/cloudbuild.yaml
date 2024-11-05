@@ -1,0 +1,13 @@
+steps:
+- name: 'ubuntu'
+  env:
+  - '_IMAGE_NAME=$_IMAGE_NAME'
+  - '_DOCKERFILE_PATH=$_DOCKERFILE_PATH'
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build',
+          '-t', '${_IMAGE_NAME}',
+          '--cache-from', '${_IMAGE_NAME}',
+          '-f', '${_DOCKERFILE_PATH}',
+          '.'  ]
+images:
+- '${_IMAGE_NAME}'

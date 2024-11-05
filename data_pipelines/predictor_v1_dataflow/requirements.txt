@@ -1,0 +1,19 @@
+# Explicit Requirements:
+#   packages we explicitly added because our code needed them.
+
+# In the original pipeline I pinned explicit versions here
+apache-beam[gcp]
+requests
+google-auth
+google-cloud-bigquery
+langchain-openai
+langchain-community
+openai
+tiktoken
+
+# Implicit Requirements:
+#   packages that were installed as dependencies of the explicit requirements.
+#   I initialized this list by running `pip list` in the dockerfile to get the
+#   list the actual deploys are using. - Sly 10/3/2024
+
+# This was the rest of the pinned requirement versions listed during the docker build.

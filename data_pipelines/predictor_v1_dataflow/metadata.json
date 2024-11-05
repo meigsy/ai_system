@@ -1,0 +1,46 @@
+{
+  "name": "predictor-v1-dataflow",
+  "description": "A pipeline to generate predictions.",
+  "parameters": [
+    {
+      "name": "project",
+      "label": "GCP Project",
+      "helpText": "The GCP project ID",
+      "default": "ai-system-meigsy-gcp",
+      "isOptional": true
+    },
+    {
+      "name": "region",
+      "label": "GCP Region",
+      "helpText": "The GCP region",
+      "default": "us-central1",
+      "isOptional": true
+    },
+    {
+      "name": "input_table",
+      "label": "BigQuery Input Table",
+      "helpText": "The BigQuery table to read from",
+      "isOptional": false
+    },
+    {
+      "name": "limit",
+      "label": "Row Limit",
+      "helpText": "Limit the number of input rows selected",
+      "default": null,
+      "isOptional": true
+    },
+    {
+      "name": "output_table",
+      "label": "BigQuery Output Table",
+      "helpText": "The BigQuery table to write to",
+      "default": "predictor_v1_curated.output_table_v1",
+      "isOptional": true
+    },
+    {
+      "name": "api_key",
+      "label": "OpenAI API Key",
+      "helpText": "OpenAI API Key",
+      "isOptional": false
+    }
+  ]
+}
