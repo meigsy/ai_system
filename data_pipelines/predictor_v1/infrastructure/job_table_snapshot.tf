@@ -21,5 +21,5 @@ resource "google_cloud_scheduler_job" "table_snapshot_job" {
   }
 
   attempt_deadline = "1800s" # 30 minutes
-  paused = false
+  paused = true
 }
